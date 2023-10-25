@@ -4,19 +4,23 @@
     --gray-3: #292524;
     --gray-4: #1c1917;
     --gray-m: #78716c;
-    --primary: #084c61;
-    --accent: #fa3a6d;
+    --accent: #ffffff;
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+html {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: var(--gray-4);
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
     height: 100vh;
 }
 
@@ -27,4 +31,263 @@ body {
     padding: 1.5rem 3rem;
     box-shadow: var(--shadow-lg);
     grid-column: 2 / 3;
+  }
+
+  .top {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+    gap:  15rem;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .search label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .search > #search {
+    display: inline-block;
+    border: 0;
+    background-color: var(--gray-2);
+    padding: 0.75em 2em;
+    outline-color: var(--primary);
+    margin-left: 1.25rem;
+    border-radius: 99em;
+    width: min(80%, 700px);
+    font-size: 1.25rem;
+  }
+
+  .header .account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    gap: 1rem;
+  }
+
+  .avatar {
+    border-radius: 50%;
+  }
+
+  .account button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--gray-1);
+    padding: 0.5em 0.5em;
+    border: 0;
+  }
+
+  .account .avatar {
+    margin: 0 1rem 0 2.5rem;
+    height: 60px;
+    width: 60px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile .greeting {
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+  }
+  
+  .profile .name {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .btn {
+    background-color: var(--gray-3);
+    color: var(--gray-1);
+    font-weight: 500;
+    padding: 1.5em 2.5em;
+    border-radius: 99em;
+    cursor: pointer;
+  }
+
+  /* Dashboard */
+
+  .dashboard {
+    background-color: var(--gray-2);
+    color: var(--gray-3);
+    padding: 2rem;
+    grid-row: 1 / 3;
+  }
+
+  .dashboard-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    gap: 1rem;
+  }
+
+  .nav {
+    font-size: 1.2rem;
+    margin-top: 3.25rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .nav-item.current {
+    font-weight: 900;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: var(--gray-3);
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  /* Main */
+
+  .content {
+    background-color: white;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: min-content 1fr;
+    gap: 2rem;
+    overflow: auto;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  .content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card {
+    background-color: var(--gray-1);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .projects {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(auto-fit, 280px);
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .projects .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.25em;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+  .actions > span {
+    font-size: 1.75rem;
+    cursor: pointer;
+  }
+
+  .announcement {
+    width: 25ch;
+    padding: 1rem 0;
+    border-bottom: var(--gray-2) 2px solid;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+
+  .announcement h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.25em;
+  }
+
+  .announcement p {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .trending {
+    grid-column: 2 / 3;
+    width: 25ch;
+  }
+
+  .trending .card {
+    padding: 1rem;
+  }
+  
+  .trend {
+    display: flex;
+
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+  }
+
+  .trend > .picture {
+    background-color: var(--accent);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .trend .account {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .trend .username {
+    font-weight: 500;
+    margin-bottom: 0.15rem;
   }
